@@ -15,6 +15,9 @@ function photographerFactory(data) {
 
         const article = document.createElement( 'article' );
 
+        const divImg = document.createElement( 'div' ); // Créer une div pour l'image
+        divImg.setAttribute('class', 'image-container'); // Ajouter une classe à la div de l'image
+
         const img = document.createElement( 'img' );
         img.setAttribute("src", picture);
 
@@ -32,15 +35,14 @@ function photographerFactory(data) {
         const h2 = document.createElement( 'h2' );
         h2.textContent = name;
 
-        
-        article.appendChild(img);
+        divImg.appendChild(img); // Ajouter l'image à la div
         article.appendChild(h2);
-        a.appendChild(article);
         article.appendChild(origin);  
         article.appendChild(tag);
         article.appendChild(prc);
+        article.appendChild(divImg); // Ajouter la div de l'image à l'article
+        a.appendChild(article);
         
-      
         return (a);
     }
     return { name, picture, getUserCardDOM }
