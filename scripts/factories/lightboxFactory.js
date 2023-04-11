@@ -89,4 +89,25 @@ function mediaModalSlide(slideAction){
   }
 }
 
+// l'événement pour la navigation lightbox avec les flèches du clavier
 
+document.addEventListener("keydown", (event) =>{
+    const isMediaModalActive = () => mediaModal.style.display !== "none";
+    const key = event.key;
+
+    if (isMediaModalActive) {
+        switch (key) {
+          case "ArrowRight":
+            mediaModalSlide(1);
+            break;
+          case "ArrowLeft":
+            mediaModalSlide(-1);
+            break;
+          case "Escape":
+            closeMediaModal();
+            closeContactModal();
+            break;
+          default:
+        }
+      }
+});

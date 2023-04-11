@@ -85,7 +85,9 @@ function displayPhotographerMedia(photographer) {
                               <span class="photograph-media-item_bottom-likes">
                                   ${newMedia._totalLikes}
                               </span>
-
+                              <a tabindex="${indexNumber += 1}" href = "#!" onclick = "incrementMediaLike(${newMedia._id})">
+                                  <i class="fa-solid fa-heart"></i>
+                              </a>
                           </div>
                        </div>
                     </article> `;
