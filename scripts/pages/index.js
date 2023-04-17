@@ -1,5 +1,6 @@
+// Fonction asynchrone pour récupérer les données des photographes depuis le fichier JSON
 async function getPhotographers() {
-    // Penser à remplacer par les données récupérées dans le json
+  //les données récupérées dans le json
     const respons = await fetch("data/photographers.json");
 
     let data = await respons.json();
@@ -16,9 +17,12 @@ async function getPhotographers() {
     // et bien retourner le tableau photographers seulement une fois
     return { photographers }
 }
+
+// Fonction asynchrone pour afficher les données des photographes dans la section dédiée du HTML
 async function displayData(photographers) {
     const photographersSection = document.querySelector(".photographer_section");
 
+// Parcourir les photographes et générer les cartes d'utilisateur pour chaque photographe
     photographers.forEach((photographer) => {
         const photographerModel = photographerFactory(photographer);
         const userCardDOM = photographerModel.getUserCardDOM();
@@ -26,10 +30,12 @@ async function displayData(photographers) {
     });
 };
 
+// Fonction d'initialisation pour récupérer les données des photographes et les afficher
 async function init() {
     // Récupère les datas des photographes
     const { photographers } = await getPhotographers();
     displayData(photographers);
 };
 
+// Appel de la fonction d'initialisation
 init();
