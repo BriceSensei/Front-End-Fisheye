@@ -66,3 +66,5 @@ function photographerFactory(data) {
     // Retourne les propriétés et la fonction getUserCardDOM comme objets
     return { name, picture, getUserCardDOM };
 }
+
+export default photographerFactory;

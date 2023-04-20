@@ -1,3 +1,6 @@
+import photographerFactory from "../factories/photographer.js";
+
+
 // Fonction asynchrone pour récupérer les données des photographes depuis le fichier JSON
 async function getPhotographers() {
   //les données récupérées dans le json
@@ -13,9 +16,9 @@ async function getPhotographers() {
     photographers.forEach(photographer => {
         const photographerMedias = dataMedia.filter(photographerMedia => photographerMedia.photographerId === photographer.id);
         photographer.medias = [...photographerMedias];
-    })
+    });
     // et bien retourner le tableau photographers seulement une fois
-    return { photographers }
+    return { photographers };
 }
 
 // Fonction asynchrone pour afficher les données des photographes dans la section dédiée du HTML
@@ -28,14 +31,14 @@ async function displayData(photographers) {
         const userCardDOM = photographerModel.getUserCardDOM();
         photographersSection.appendChild(userCardDOM);
     });
-};
+}
 
 // Fonction d'initialisation pour récupérer les données des photographes et les afficher
 async function init() {
     // Récupère les datas des photographes
     const { photographers } = await getPhotographers();
     displayData(photographers);
-};
+}
 
 // Appel de la fonction d'initialisation
 init();
