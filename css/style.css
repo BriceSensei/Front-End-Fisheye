@@ -4,7 +4,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  max-width: 1400px;
+  /* max-width: 1400px; */
 }
 
 body {
@@ -124,16 +124,6 @@ h1 {
   display: block;
   color: #901c1c;
   font-size: 13px;
-}
-
-@media screen and (min-width: 10px) and (max-width: 480px) {
-  #photograph-city {
-    font-size: 15px;
-  }
-
-  .photographer_section{
-    grid-template-columns: repeat(2,1fr);
-  }
 }
 
 #photograph-tagline {
@@ -343,5 +333,9 @@ h1 {
   .photographer_section {
     display: flex;
     flex-direction: column;
+  }
+
+    #main .photographer_section{
+    grid-template-columns: repeat(2,1fr)!important;
   }
 }
